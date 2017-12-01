@@ -5,10 +5,8 @@ using System.Threading.Tasks;
 
 namespace vega.Models.Resources
 {
-    public class MakeResource
+    public class MakeResource:KeyValuePairResource
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public ICollection<ModelResource> Models { get; set; }
+        public ICollection<KeyValuePairResource> Models { get; set; }
     }
 }

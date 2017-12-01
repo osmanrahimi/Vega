@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace vega.Models
 {
@@ -8,5 +10,11 @@ namespace vega.Models
         [Required]
         [StringLength(255)]
         public string Name { get; set; }
+
+       // public ICollection<VehicleFeature> Features { get; set; }
+        public Feature()
+        {
+         //   Features = new Collection<VehicleFeature>();
+        }
     }
 }
