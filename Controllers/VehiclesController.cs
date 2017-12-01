@@ -1,11 +1,10 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using System;
 using System.Threading.Tasks;
+using vega.Core;
 using vega.Models;
 using vega.Models.Resources;
-using vega.Persistence;
 
 namespace vega.Controllers
 {
@@ -23,7 +22,7 @@ namespace vega.Controllers
             this.unitOfWork = unitOfWork;
         }
         [HttpPost]
-        public async Task<IActionResult> CrateVehicle(SaveVehicleResource vehiclesResource)
+        public async Task<IActionResult> CrateVehicle([FromBody]SaveVehicleResource vehiclesResource)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
